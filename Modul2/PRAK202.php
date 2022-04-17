@@ -31,7 +31,7 @@
         }
     }
     ?>
-        <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST">
+        <form action = "" method = "POST">
         <div>
             <label for = "">Nama :</label>
             <input type = "text" name = "nama" value = "<?php if(isset($nama)) echo $nama;?>">
