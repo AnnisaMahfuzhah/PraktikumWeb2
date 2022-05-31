@@ -1,5 +1,6 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "perpustakaan");
+
+require 'Koneksi.php';
 
 // Fungsi CRUD Buku
 function queryBuku($queryBuku)
@@ -81,8 +82,9 @@ function insertMember($dataMember)
     $alamat = htmlspecialchars($dataMember["alamat"]);
     $tgl_mendaftar = htmlspecialchars($dataMember["tgl_mendaftar"]);
     $tgl_terakhir_bayar = htmlspecialchars($dataMember["tgl_terakhir_bayar"]);
+    $password_member = htmlspecialchars($dataMember["password_member"]);
 
-    $queryMember = "INSERT INTO member VALUE ('', '$nama_member', '$nomor_member', '$alamat', '$tgl_mendaftar', '$tgl_terakhir_bayar')";
+    $queryMember = "INSERT INTO member VALUE ('', '$nama_member', '$nomor_member', '$alamat', '$tgl_mendaftar', '$tgl_terakhir_bayar', '$password_member')";
     mysqli_query($connection, $queryMember);
 
     return mysqli_affected_rows($connection);
@@ -105,13 +107,15 @@ function updateMember($dataMember)
     $alamat = htmlspecialchars($dataMember["alamat"]);
     $tgl_mendaftar = htmlspecialchars($dataMember["tgl_mendaftar"]);
     $tgl_terakhir_bayar = htmlspecialchars($dataMember["tgl_terakhir_bayar"]);
+    $password_member = htmlspecialchars($dataMember["password_member"]);
 
     $queryMember = "UPDATE member SET
                 nama_member = '$nama_member',
                 nomor_member = '$nomor_member',
                 alamat = '$alamat',
                 tgl_mendaftar = '$tgl_mendaftar',
-                tgl_terakhir_bayar = '$tgl_terakhir_bayar'
+                tgl_terakhir_bayar = '$tgl_terakhir_bayar',
+                password_member = '$password_member'
                 WHERE id_member = $id_member";
     mysqli_query($connection, $queryMember);
 

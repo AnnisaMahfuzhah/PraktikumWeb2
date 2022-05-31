@@ -9,7 +9,6 @@ require 'Model.php';
     <body>
         <h1>Form Data Member</h1>
         <form action = "" method = "post">
-            <input type = "hidden" name ="id_member" value = "<?php echo $edit["id_member"]?>">
             <table>
             <div>
             <tr>
@@ -40,8 +39,6 @@ require 'Model.php';
                 <td><label for = "tgl_terakhir_bayar">TANGGAL TERAKHIR BAYAR</label></td>
                 <td><input type = "date" name = "tgl_terakhir_bayar" id = "tgl_terakhir_bayar" required></td>
             </tr>
-            </div>
-            </table>
             <br>
             <button type = "submit" name = "submit">Submit</button>
         </form>
